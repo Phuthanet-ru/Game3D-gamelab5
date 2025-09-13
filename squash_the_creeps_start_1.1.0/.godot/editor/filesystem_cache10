@@ -1,8 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1757790557
+::res://::1757791811
 default_bus_layout.tres::AudioBusLayout/AudioBusLayout::-1::1757597589::0::1::::<><><>0<>0<><>::
 default_env.tres::Environment/Environment::-1::1757597589::0::1::::<><><>0<>0<><>::
-export_presets.cfg::TextFile::-1::1757790557::0::1::::<><><>0<>0<><>::
+export_presets.cfg::TextFile::-1::1757791811::0::1::::<><><>0<>0<><>::
 icon.png::CompressedTexture2D/CompressedTexture2D::845362311550772208::1606009720::1757597633::1::::<><><>0<>0<>17bb707621383de082f79d61ed553871<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
 mob.gd::GDScript::2715363250265563771::1757780715::0::1::::<>CharacterBody3D<><>0<>0<><>::
 ::res://art/::1757789704
@@ -19,18 +19,18 @@ Parking Lot.glb::PackedScene::6807507709176355424::1757780949::1757781002::1::::
 player.glb::PackedScene/PackedScene::6816812622251854138::1606514058::1757597634::1::::<><><>0<>0<>b991603180e70dd216511b3c74bb3f2a<>res://.godot/imported/player.glb-08dcfb373480a049995065542e37637b.scn::
 pupil.material::StandardMaterial3D/StandardMaterial3D::-1::1606514142::0::1::::<><><>0<>0<><>::
 the_sky_is_on_fire_4k.exr::CompressedTexture2D::8266841687504672287::1757789407::1757789704::1::::<><><>0<>0<>bfd47e1a84f3f99dba0d8e4adc4742d4<>res://.godot/imported/the_sky_is_on_fire_4k.exr-87d62ce39fa49004a32fb804b88ed561.bptc.ctex::
-::res://docs/::1757790556
-gamelab5.apple-touch-icon.png::CompressedTexture2D::3202027759036709821::1757790556::1757790605::1::::<><><>0<>0<>30a31b97bb22e2d4f56e9d47fb5514ad<>res://.godot/imported/gamelab5.apple-touch-icon.png-98a9b9d5c13c3070645c829bb7a85f73.ctex::
-gamelab5.icon.png::CompressedTexture2D::7033249536417407255::1757790556::1757790605::1::::<><><>0<>0<>bc40b36caaf5cedf798cb17418bc87b7<>res://.godot/imported/gamelab5.icon.png-54ac4921178dc4dd4beb6479088eb476.ctex::
-gamelab5.png::CompressedTexture2D::8950802829542256752::1757790556::1757790605::1::::<><><>0<>0<>cc0be71e62c905cc5e1950e2572cc791<>res://.godot/imported/gamelab5.png-f3f5783892a5466355453cf3e449b62e.ctex::
+::res://docs/::1757791810
+index.apple-touch-icon.png::CompressedTexture2D::9064474407758570349::1757791810::1757792008::1::::<><><>0<>0<>328aae6d518171d3aba99e1882f03596<>res://.godot/imported/index.apple-touch-icon.png-b21a756d869f84af832970a74d8371bc.ctex::
+index.icon.png::CompressedTexture2D::9020512789707650953::1757791810::1757792008::1::::<><><>0<>0<>da86850a4d6c96e6935052023769b6bf<>res://.godot/imported/index.icon.png-b92c9a802ad4b78e247784454a6b506f.ctex::
+index.png::CompressedTexture2D::1415429943532010243::1757791810::1757792008::1::::<><><>0<>0<>6cd372732b68805c63be2afbf688b2c8<>res://.godot/imported/index.png-0c78d14d192abe5f22f8c25928ca1ab8.ctex::
 ::res://fonts/::1757597633
 LICENSE.txt::TextFile/TextFile::-1::1605988452::0::1::::<><><>0<>0<><>::
 Montserrat-Medium.ttf::FontFile/FontFile::4512178857603668988::1323702000::1757597633::1::::<><><>0<>0<>30b39390ba2ceea187da483c8b4cae83<>res://.godot/imported/Montserrat-Medium.ttf-e832861e4ad4110e172112dc430c04b0.fontdata::
-::res://Scene/::1757790491
+::res://Scene/::1757791748
 main.gd::GDScript::5996254156534242754::1757779451::0::1::::<>Node<><>0<>0<><>::
-main.tscn::PackedScene::6236723607164403602::1757790490::0::1::::<><><>0<>0<><>::uid://bojg4jtiknw3j::::res://Scene/player.tscn<>uid://crovou7tnmx7w::::res://Scene/main.gd<>uid://d258clonucfpi::::res://Scene/mob.tscn<>uid://c38uwl6xv41xs::::res://art/Parking Lot.glb<>uid://b5jy6rdakwpmy::::res://fonts/Montserrat-Medium.ttf<>uid://cx6akvk3yvi15::::res://Scene/score_label.gd<>uid://dp1rw7cbscix8::::res://art/the_sky_is_on_fire_4k.exr
-mob.tscn::PackedScene::9118299994278659466::1757790490::0::1::::<><><>0<>0<><>::uid://bexlvvh3gin8f::::res://mob.gd<>uid://deqb64865l2e6::::res://art/Dodge Charger.glb
+main.tscn::PackedScene::6236723607164403602::1757791748::0::1::::<><><>0<>0<><>::uid://bojg4jtiknw3j::::res://Scene/player.tscn<>uid://crovou7tnmx7w::::res://Scene/main.gd<>uid://d258clonucfpi::::res://Scene/mob.tscn<>uid://c38uwl6xv41xs::::res://art/Parking Lot.glb<>uid://b5jy6rdakwpmy::::res://fonts/Montserrat-Medium.ttf<>uid://cx6akvk3yvi15::::res://Scene/score_label.gd<>uid://dp1rw7cbscix8::::res://art/the_sky_is_on_fire_4k.exr
+mob.tscn::PackedScene::9118299994278659466::1757791748::0::1::::<><><>0<>0<><>::uid://bexlvvh3gin8f::::res://mob.gd<>uid://deqb64865l2e6::::res://art/Dodge Charger.glb
 player.gd::GDScript::7491138893832612032::1757780648::0::1::::<>CharacterBody3D<><>0<>0<><>::
-player.tscn::PackedScene::3388060486830752481::1757790490::0::1::::<><><>0<>0<><>::uid://dmdri4b8yshoc::::res://art/Bob.glb<>uid://dey070mfxh2tg::::res://Scene/player.gd
-music_player.tscn::PackedScene::4567646273665717615::1757790491::0::1::::<><><>0<>0<><>::uid://vottfpo8atbl::::res://art/Iframe Don't Know How to Stop [UzLuGZ1i-aU].mp3
+player.tscn::PackedScene::3388060486830752481::1757791748::0::1::::<><><>0<>0<><>::uid://dmdri4b8yshoc::::res://art/Bob.glb<>uid://dey070mfxh2tg::::res://Scene/player.gd
+music_player.tscn::PackedScene::4567646273665717615::1757791748::0::1::::<><><>0<>0<><>::uid://vottfpo8atbl::::res://art/Iframe Don't Know How to Stop [UzLuGZ1i-aU].mp3
 score_label.gd::GDScript::6451199459119345626::1757776679::0::1::::<>Label<><>0<>0<><>::
