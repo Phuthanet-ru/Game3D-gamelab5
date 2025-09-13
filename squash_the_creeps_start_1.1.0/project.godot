@@ -64,6 +64,5 @@ jump={
 
 [rendering]
 
-environment/defaults/default_clear_color=Color(0.721758, 0.644448, 0.562088, 1)
 quality/driver/driver_name="GLES2"
 quality/filters/msaa=3

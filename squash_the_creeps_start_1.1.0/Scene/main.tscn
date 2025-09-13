@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cu4d6rfuxbjuo"]
+[gd_scene load_steps=21 format=3 uid="uid://cu4d6rfuxbjuo"]
 
 [ext_resource type="PackedScene" uid="uid://bojg4jtiknw3j" path="res://Scene/player.tscn" id="1_f6udf"]
 [ext_resource type="Script" uid="uid://crovou7tnmx7w" path="res://Scene/main.gd" id="1_r34rm"]
@@ -6,16 +6,17 @@
 [ext_resource type="PackedScene" uid="uid://c38uwl6xv41xs" path="res://art/Parking Lot.glb" id="3_1xcnr"]
 [ext_resource type="FontFile" uid="uid://b5jy6rdakwpmy" path="res://fonts/Montserrat-Medium.ttf" id="4_2wwxx"]
 [ext_resource type="Script" uid="uid://cx6akvk3yvi15" path="res://Scene/score_label.gd" id="5_3amdw"]
+[ext_resource type="Texture2D" uid="uid://dp1rw7cbscix8" path="res://art/the_sky_is_on_fire_4k.exr" id="7_ow1sv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rlixt"]
-size = Vector3(60, 2, 60)
+size = Vector3(40, 2, 40)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1xcnr"]
 albedo_color = Color(0.279413, 0.285758, 0.29302, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_f6udf"]
 material = SubResource("StandardMaterial3D_1xcnr")
-size = Vector3(60, 2, 60)
+size = Vector3(40, 2, 40)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3amdw"]
 albedo_color = Color(0.968627, 0.545098, 0, 1)
@@ -44,6 +45,17 @@ size = Vector3(50, 20, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_ow1sv"]
 size = Vector3(1, 20, 40)
 
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_75buv"]
+panorama = ExtResource("7_ow1sv")
+
+[sub_resource type="Sky" id="Sky_c2iwn"]
+sky_material = SubResource("PanoramaSkyMaterial_75buv")
+
+[sub_resource type="Environment" id="Environment_1xcnr"]
+background_mode = 2
+sky = SubResource("Sky_c2iwn")
+sky_rotation = Vector3(0.211185, 2.33525, -0.221657)
+
 [node name="Main" type="Node"]
 script = ExtResource("1_r34rm")
 mob_scene = ExtResource("2_2wwxx")
@@ -61,11 +73,14 @@ debug_color = Color(1, 1, 1, 1)
 mesh = SubResource("BoxMesh_f6udf")
 
 [node name="Parking Lot" parent="Ground/CollisionShape3D" instance=ExtResource("3_1xcnr")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 1, 0)
+transform = Transform3D(-4.37114e-07, 0, -10, 0, 10, 0, 10, 0, -4.37114e-07, 0, 1, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
-light_color = Color(0.981337, 0.729137, 0.505208, 1)
+transform = Transform3D(-1, -1.87728e-08, 8.53834e-08, 0, 0.976672, 0.214735, -8.74228e-08, 0.214735, -0.976672, 0, 0, 0)
+light_color = Color(0.94701, 0.5369, 3.46541e-06, 1)
+light_energy = 16.0
+light_indirect_energy = 16.0
+light_volumetric_fog_energy = 16.0
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_f6udf")]
@@ -74,7 +89,7 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 30)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 25)
 
 [node name="Cylinders" type="Node3D" parent="."]
 
@@ -121,7 +136,10 @@ anchor_left = 0.177778
 anchor_top = 0.0166667
 anchor_right = 0.575
 anchor_bottom = 0.0833333
-text = "ภูธเนศ รวมธรรม 663380530-4"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+text = "Phuthanet Ruamtham 663380530-4"
 metadata/_edit_use_anchors_ = true
 
 [node name="ScoreLabel" type="Label" parent="UserInterface"]
@@ -130,7 +148,11 @@ offset_left = 16.0
 offset_top = 11.0
 offset_right = 77.0
 offset_bottom = 34.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.976471, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0.968627, 1, 0, 1)
+theme_override_fonts/font = ExtResource("4_2wwxx")
+theme_override_font_sizes/font_size = 30
 text = "Score: 0"
 script = ExtResource("5_3amdw")
 
@@ -178,6 +200,9 @@ shape = SubResource("BoxShape3D_ow1sv")
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -0.5)
 shape = SubResource("BoxShape3D_ow1sv")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1xcnr")
 
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
