@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6cup4usw3i7p"]
+
+[ext_resource type="AudioStream" uid="uid://vottfpo8atbl" path="res://art/Iframe Don't Know How to Stop [UzLuGZ1i-aU].mp3" id="1_nk30b"]
+
+[node name="MusicPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_nk30b")
+volume_db = -30.0
+autoplay = true

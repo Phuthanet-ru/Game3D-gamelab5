@@ -1,13 +1,20 @@
-[gd_scene load_steps=9 format=3 uid="uid://cu4d6rfuxbjuo"]
+[gd_scene load_steps=17 format=3 uid="uid://cu4d6rfuxbjuo"]
 
 [ext_resource type="PackedScene" uid="uid://bojg4jtiknw3j" path="res://Scene/player.tscn" id="1_f6udf"]
 [ext_resource type="Script" uid="uid://crovou7tnmx7w" path="res://Scene/main.gd" id="1_r34rm"]
 [ext_resource type="PackedScene" uid="uid://d258clonucfpi" path="res://Scene/mob.tscn" id="2_2wwxx"]
+[ext_resource type="PackedScene" uid="uid://c38uwl6xv41xs" path="res://art/Parking Lot.glb" id="3_1xcnr"]
+[ext_resource type="FontFile" uid="uid://b5jy6rdakwpmy" path="res://fonts/Montserrat-Medium.ttf" id="4_2wwxx"]
+[ext_resource type="Script" uid="uid://cx6akvk3yvi15" path="res://Scene/score_label.gd" id="5_3amdw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rlixt"]
 size = Vector3(60, 2, 60)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1xcnr"]
+albedo_color = Color(0.279413, 0.285758, 0.29302, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_f6udf"]
+material = SubResource("StandardMaterial3D_1xcnr")
 size = Vector3(60, 2, 60)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3amdw"]
@@ -23,6 +30,19 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
+
+[sub_resource type="Theme" id="Theme_3amdw"]
+default_font = ExtResource("4_2wwxx")
+default_font_size = 22
+
+[sub_resource type="Theme" id="Theme_1xcnr"]
+default_font = ExtResource("4_2wwxx")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1xcnr"]
+size = Vector3(50, 20, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ow1sv"]
+size = Vector3(1, 20, 40)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_r34rm")
@@ -40,8 +60,12 @@ debug_color = Color(1, 1, 1, 1)
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground/CollisionShape3D"]
 mesh = SubResource("BoxMesh_f6udf")
 
+[node name="Parking Lot" parent="Ground/CollisionShape3D" instance=ExtResource("3_1xcnr")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 1, 0)
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+light_color = Color(0.981337, 0.729137, 0.505208, 1)
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_f6udf")]
@@ -50,7 +74,7 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 30)
 
 [node name="Cylinders" type="Node3D" parent="."]
 
@@ -80,4 +104,80 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.0062, 0, 15.9305)
 wait_time = 0.5
 autostart = true
 
+[node name="UserInterface" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_3amdw")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="UserInterface"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.177778
+anchor_top = 0.0166667
+anchor_right = 0.575
+anchor_bottom = 0.0833333
+text = "ภูธเนศ รวมธรรม 663380530-4"
+metadata/_edit_use_anchors_ = true
+
+[node name="ScoreLabel" type="Label" parent="UserInterface"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 11.0
+offset_right = 77.0
+offset_bottom = 34.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Score: 0"
+script = ExtResource("5_3amdw")
+
+[node name="Retry" type="ColorRect" parent="UserInterface"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.635294)
+
+[node name="Label" type="Label" parent="UserInterface/Retry"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -109.5
+offset_top = -14.0
+offset_right = 109.5
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_1xcnr")
+text = "Press Enter to retry."
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -20)
+shape = SubResource("BoxShape3D_1xcnr")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 19)
+shape = SubResource("BoxShape3D_1xcnr")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, -0.5)
+shape = SubResource("BoxShape3D_ow1sv")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -0.5)
+shape = SubResource("BoxShape3D_ow1sv")
+
+[connection signal="hit" from="Player" to="." method="_on_player_hit"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]

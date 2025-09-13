@@ -15,6 +15,10 @@ run/main_scene="uid://cu4d6rfuxbjuo"
 config/features=PackedStringArray("4.4")
 config/icon="res://icon.png"
 
+[autoload]
+
+MusicPlayer="*res://Scene/music_player.tscn"
+
 [display]
 
 window/size/viewport_width=720
@@ -60,5 +64,6 @@ jump={
 
 [rendering]
 
+environment/defaults/default_clear_color=Color(0.721758, 0.644448, 0.562088, 1)
 quality/driver/driver_name="GLES2"
 quality/filters/msaa=3
